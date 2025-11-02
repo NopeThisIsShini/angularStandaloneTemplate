@@ -1,0 +1,14 @@
+{
+  "name": "Medenzy",
+  "description": "Angular Electron sample",
+  "author": {
+    "name": "SHINIGAMI 69",
+    "email": "getin2santa@gmail.com"
+  },
+  "version": "1.5.0",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "electron-updater": "6.6.2"
+  }
+}
