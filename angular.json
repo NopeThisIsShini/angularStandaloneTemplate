@@ -9,7 +9,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Medenzy": {
+    "Template": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -115,29 +115,29 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "buildTarget": "Medenzy:build"
+            "buildTarget": "Template:build"
           },
           "configurations": {
             "dev": {
-              "buildTarget": "Medenzy:build:dev",
+              "buildTarget": "Template:build:dev",
               "hmr": true
             },
             "production": {
-              "buildTarget": "Medenzy:build:production"
+              "buildTarget": "Template:build:production"
             },
             "web": {
-              "buildTarget": "Medenzy:build:web",
+              "buildTarget": "Template:build:web",
               "hmr": true
             },
             "web-production": {
-              "buildTarget": "Medenzy:build:web-production"
+              "buildTarget": "Template:build:web-production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n",
           "options": {
-            "buildTarget": "Medenzy:build"
+            "buildTarget": "Template:build"
           }
         },
         "test": {
@@ -165,7 +165,7 @@
         }
       }
     },
-    "Medenzy-e2e": {
+    "Template-e2e": {
       "root": "e2e",
       "projectType": "application",
       "architect": {

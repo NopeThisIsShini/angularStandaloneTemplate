@@ -1,6 +1,6 @@
 {
   "asar": true,
-  "artifactName": "Medenzy.Setup.${version}.${ext}",
+  "artifactName": "Template.Setup.${version}.${ext}",
   "directories": {
     "output": "release/"
   },

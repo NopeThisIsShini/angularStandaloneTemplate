@@ -1,23 +1,24 @@
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
-const webpack = require("webpack");
-
+/**
+ * Custom Angular Webpack configuration
+ * Clean version — no Node.js polyfills or server-side dependencies.
+ */
 module.exports = (config, options) => {
+  // Ensure fallbacks are empty — removes node polyfills
   config.resolve.fallback = {
     ...config.resolve.fallback,
-    global: require.resolve("global"),
-    process: require.resolve("process/browser"),
-    buffer: require.resolve("buffer/"),
+    global: false,
+    process: false,
+    buffer: false,
   };
 
-  config.plugins.push(
-    new NodePolyfillPlugin(),
-    new webpack.ProvidePlugin({
-      process: "process/browser",
-      Buffer: ["buffer", "Buffer"],
-      global: ["global"], // optional but useful
-    })
+  // Remove NodePolyfillPlugin and ProvidePlugin — not needed
+  config.plugins = config.plugins.filter(
+    (plugin) =>
+      plugin.constructor.name !== "NodePolyfillPlugin" &&
+      plugin.constructor.name !== "ProvidePlugin"
   );
-  // Enable HMR
+
+  // Optional: Enable Hot Module Replacement (only in dev)
   if (
     options.configuration !== "production" &&
     options.configuration !== "web-production"
@@ -28,5 +29,6 @@ module.exports = (config, options) => {
       liveReload: true,
     };
   }
+
   return config;
 };
