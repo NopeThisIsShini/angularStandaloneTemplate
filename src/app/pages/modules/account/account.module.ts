@@ -12,7 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 
 import { AvatarModule } from 'primeng/avatar';
-import { InputTextComponent } from '../../../shared/components/input-text/input-text.component';
+import { InputTextComponent } from '../../../shared/components/UI/input-text/input-text.component';
 
 @NgModule({
   declarations: [AccountComponent, SmtpComponent, ProfileComponent],

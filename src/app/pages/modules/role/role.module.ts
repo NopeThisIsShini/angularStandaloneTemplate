@@ -7,9 +7,9 @@ import { RoleComponent } from './role.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PermissionComponent } from '../../../shared/components/permission/permission.component';
 import { TableSkeletonComponent } from '../../../shared/skeleton/table-skeleton/table-skeleton.component';
-import { InputTextComponent } from '../../../shared/components/input-text/input-text.component';
-import { PrimengModule } from '../../../lib/primeng.module';
-import { CommonTableComponent } from '../../../shared/components/common-table/common-table.component';
+import { InputTextComponent } from '../../../shared/components/UI/input-text/input-text.component';
+import { PrimengModule } from '../../../shared/lib/primeng.module';
+import { CommonTableComponent } from '../../../shared/components/UI/common-table/common-table.component';
 @NgModule({
   declarations: [RoleComponent],
   imports: [

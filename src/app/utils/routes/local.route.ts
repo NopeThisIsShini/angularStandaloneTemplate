@@ -1,12 +1,13 @@
 import { profile } from "console";
 
-export const local_routes = {
-    auth: 'auth',
-    login: 'login',
-    signup: 'signup',
-    resetpassword: 'resetpassword',
-    role: 'role',
-    profile: 'profile',
-    smtp: 'smtp',
-    dashboard: 'dashboard',
+export const LOCAL_ROUTES = {
+    AUTH: 'auth',
+    LOGIN: 'login',
+    SIGNUP: 'signup',
+    RESET_PASSWORD: 'resetpassword',
+    ROLE: 'role',
+    USER: 'user',
+    PROFILE: 'profile',
+    SMTP: 'smtp',
+    DASHBOARD: 'dashboard',
 };

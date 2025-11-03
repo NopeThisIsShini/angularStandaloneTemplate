@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { local_routes } from '../../../utils/routes/local.route';
+import { LOCAL_ROUTES } from '../../../utils/routes/local.route';
 interface menuItem {
   route: string;
   label: string;
@@ -23,8 +23,8 @@ export class AccountComponent {
 
   loadTabs() {
     this.tabs = [
-      { route: local_routes.profile, label: 'Profile', icon: 'pi pi-user' },
-      { route: local_routes.smtp, label: 'Smtp', icon: 'pi pi-envelope' },
+      { route: LOCAL_ROUTES.PROFILE, label: 'Profile', icon: 'pi pi-user' },
+      { route: LOCAL_ROUTES.SMTP, label: 'Smtp', icon: 'pi pi-envelope' },
     ];
   }
 

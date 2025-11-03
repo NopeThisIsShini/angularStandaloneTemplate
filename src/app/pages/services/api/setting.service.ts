@@ -7,8 +7,7 @@ import { smtpSettingsPayload } from '../../models/api/smtp.model';
 })
 export class SettingService {
     constructor(private http: HttpClient) {}
-
-    getEmailSettings() {
+   getEmailSettings() {
         return this.http.get('get_email_setting');
     }
 

@@ -1,15 +1,4 @@
-const esModules = [].join('|');
-
 module.exports = {
-  rootDir : './src',
-  transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules})`],
-  transform: {
-    '^.+\\.tsx?$': [
-      'ts-jest',
-      {
-        allowSyntheticDefaultImports: true,
-      },
-    ],
-    '^.+\\.js$': 'babel-jest',
-  },
+  preset: 'jest-preset-angular',
+  globalSetup: 'jest-preset-angular/global-setup',
 };

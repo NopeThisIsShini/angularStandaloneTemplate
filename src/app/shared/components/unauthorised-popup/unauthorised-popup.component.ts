@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { local_routes } from '../../../utils/routes/local.route';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { AuthService } from '../../../pages/services/api/auth.service';
 

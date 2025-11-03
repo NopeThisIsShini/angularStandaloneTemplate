@@ -4,7 +4,7 @@ import { EMPTY, Observable, switchMap, take, tap, throwError } from 'rxjs';
 import { loginRequest, loginResponse } from '../../models/api/login.model';
 import { signupRequest, signupResponse } from '../../models/api/auth.model';
 import { api_routes } from '../../../utils/routes/api.route';
-import { LocalStorageService } from '../../../local.storage.service';
+import { LocalStorageService } from '../../../shared/services/storage/local.storage.service';
 import { Router } from '@angular/router';
 import { ConfigService } from '../../../shared/services/api/config.service';
 

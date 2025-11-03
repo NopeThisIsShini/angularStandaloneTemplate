@@ -1,17 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ],
-    "analytics": false
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "Template": {
-      "root": "",
-      "sourceRoot": "src",
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -21,6 +13,8 @@
           "style": "scss"
         }
       },
+      "root": "",
+      "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
@@ -37,7 +31,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles.scss"
             ],
             "scripts": [],
             "customWebpackConfig": {
@@ -143,9 +137,6 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "polyfills": [
-              "src/polyfills-test.ts"
-            ],
             "tsConfig": "src/tsconfig.spec.json",
             "globalMocks": [
               "styleTransform",
@@ -187,5 +178,8 @@
     "@angular-eslint/schematics:library": {
       "setParserOptionsProject": true
     }
+  },
+  "cli": {
+    "analytics": "a5dc1aa6-dd2f-4e24-bff6-b27687690bf6"
   }
 }

@@ -20,7 +20,7 @@ import { AppConfigurator } from '../app.configurator';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { OverlayBadgeModule } from 'primeng/overlaybadge';
-import { PrimengModule } from '../../../lib/primeng.module';
+import { PrimengModule } from '../../../shared/lib/primeng.module';
 import { AuthService } from '../../../pages/services/api/auth.service';
 import { ProfileService } from '../../../pages/services/api/profile.service';
 @Component({

@@ -1,5 +1,5 @@
 import { CanActivateFn, Router } from '@angular/router';
-import { LocalStorageService } from '../../local.storage.service';
+import { LocalStorageService } from '../../shared/services/storage/local.storage.service';
 import { inject } from '@angular/core';
 import { AuthService } from '../../pages/services/api/auth.service';
 
