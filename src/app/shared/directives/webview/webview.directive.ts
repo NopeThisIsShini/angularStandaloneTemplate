@@ -5,5 +5,5 @@ import { Directive } from '@angular/core';
     standalone: true
 })
 export class WebviewDirective {
-  constructor() { }
+    constructor() {}
 }

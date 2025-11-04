@@ -1,41 +1,41 @@
-import { CommonModel } from "../../../shared/models/api/common.model";
+import { CommonModel } from '@app/shared/models';
 
 export interface smtpSettingsPayload {
-  name: string;
+    name: string;
 }
 
 export interface EmailSettings {
-  defaultFromAddress: string;
-  defaultFromDisplayName: string;
-  smtpHost: string;
-  smtpPort: number;
-  smtpUserName: string;
-  smtpPassword: string;
-  smtpEnableSsl: boolean;
-  smtpUseDefaultCredentials: boolean;
-  smtpDomain: string;
+    defaultFromAddress: string;
+    defaultFromDisplayName: string;
+    smtpHost: string;
+    smtpPort: number;
+    smtpUserName: string;
+    smtpPassword: string;
+    smtpEnableSsl: boolean;
+    smtpUseDefaultCredentials: boolean;
+    smtpDomain: string;
 }
 
 export interface EmailSettingsResult extends CommonModel {
-  result: EmailSettings;
+    result: EmailSettings;
 }
 
 export interface EmailConfig {
-  defaultFromAddress: string;
-  defaultFromDisplayName: string;
-  smtpHost: string;
-  smtpPort: number;
-  smtpUserName: string;
-  smtpPassword: string;
-  smtpEnableSsl: boolean;
-  smtpUseDefaultCredentials: boolean;
-  smtpDomain: string;
+    defaultFromAddress: string;
+    defaultFromDisplayName: string;
+    smtpHost: string;
+    smtpPort: number;
+    smtpUserName: string;
+    smtpPassword: string;
+    smtpEnableSsl: boolean;
+    smtpUseDefaultCredentials: boolean;
+    smtpDomain: string;
 }
 
 export interface EmailSettingsResponse {
-  email: EmailConfig;
+    email: EmailConfig;
 }
 
 export interface EmailSettings extends CommonModel {
-  result: EmailSettingsResponse;
+    result: EmailSettingsResponse;
 }

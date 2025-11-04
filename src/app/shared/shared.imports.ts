@@ -1,16 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { PrimengModule } from './lib';
-import { CommonTableComponent, InputTextComponent, SelectComponent } from './components';
 import { RouterLink } from '@angular/router';
+import { CommonTableComponent, InputTextComponent, SelectComponent } from './components';
+import { NgModule } from '@angular/core';
+import { PrimengImports } from './primeng.import';
 
-export const SharedImports = [
-  CommonModule,
-  FormsModule,
-  ReactiveFormsModule,
-  PrimengModule,
-  InputTextComponent,
-  CommonTableComponent,
-  SelectComponent,
-  RouterLink
-];
+const SharedImports = [CommonModule, FormsModule, ReactiveFormsModule, ...PrimengImports, InputTextComponent, CommonTableComponent, SelectComponent, RouterLink];
+@NgModule({
+    imports: [...SharedImports],
+    exports: [...SharedImports]
+})
+export class SharedModule {}

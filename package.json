@@ -1,32 +1,12 @@
 {
-  "name": "Template",
-  "description": "Angular 19 with Electron 36 (Typescript + SASS + Hot Reload)",
-  "author": {
-    "name": "Santasri Pachhal",
-    "email": "getin2santa@gmail.com"
-  },
-  "keywords": [
-    "angular",
-    "angular 19",
-    "electron",
-    "electron 36",
-    "nodejs",
-    "typescript",
-    "jest",
-    "playwright",
-    "eslint",
-    "sass",
-    "windows",
-    "mac",
-    "linux"
-  ],
+  "name": "sakai-ng",
   "main": "app/main.js",
   "private": true,
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "ng": "ng",
     "start": "npm-run-all -p electron:serve ng:serve",
-    "ng:serve": "ng serve -c web ",
+    "ng:serve": "ng serve -c web",
     "build": "npm run electron:serve-tsc && ng build --base-href ./",
     "build:dev": "npm run build -- -c dev",
     "build:prod": "npm run build -- -c production",
@@ -41,7 +21,8 @@
     "e2e": "npm run build:prod && playwright test -c e2e/playwright.config.ts e2e/",
     "e2e:show-trace": "playwright show-trace e2e/tracing/trace.zip",
     "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "format": "prettier --write \"**/*.{js,mjs,ts,mts,d.ts,html}\" --cache"
   },
   "dependencies": {
     "@angular/animations": "^19.2.14",
@@ -60,30 +41,19 @@
     "primeicons": "^7.0.0",
     "primeng": "^19.1.3",
     "rxjs": "~7.8.0",
-    "three": "^0.179.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "19.0.1",
     "@angular-builders/jest": "19.0.1",
-    "@angular-eslint/builder": "19.7.1",
-    "@angular-eslint/eslint-plugin": "19.7.1",
-    "@angular-eslint/eslint-plugin-template": "19.7.1",
-    "@angular-eslint/schematics": "19.7.1",
-    "@angular-eslint/template-parser": "19.7.1",
     "@angular/build": "^19.2.14",
     "@angular/cli": "19.2.14",
     "@angular/compiler-cli": "19.2.14",
     "@briebug/jest-schematic": "6.0.0",
-    "@ngx-translate/core": "16.0.4",
-    "@ngx-translate/http-loader": "16.0.1",
     "@playwright/test": "1.52.0",
     "@types/jest": "29.5.14",
     "@types/node": "22.15.29",
-    "@types/three": "^0.179.0",
-    "@typescript-eslint/eslint-plugin": "8.33.1",
-    "@typescript-eslint/parser": "8.33.1",
     "autoprefixer": "^10.4.21",
     "buffer": "6.0.3",
     "conventional-changelog-cli": "4.1.0",
@@ -91,11 +61,6 @@
     "electron-builder": "26.0.12",
     "electron-debug": "4.1.0",
     "electron-reloader": "1.2.3",
-    "eslint": "^9.14.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-prettier": "^4.2.1",
     "global": "4.4.0",
     "jest": "29.7.0",
     "node-polyfill-webpack-plugin": "4.1.0",
@@ -106,17 +71,18 @@
     "process": "0.11.10",
     "rimraf": "6.0.1",
     "tailwindcss": "^3.4.17",
-    "three-orbitcontrols-ts": "^0.1.2",
     "ts-node": "10.9.2",
     "typescript": "5.8.3",
     "wait-on": "7.2.0",
-    "webdriver-manager": "12.1.9"
+    "webdriver-manager": "12.1.9",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1"
   },
   "engines": {
     "node": ">=20.10.0 <23.0.0",
     "typescript": ">=5.6.0 <6.0.0"
-  },
-  "browserslist": [
-    "chrome 136"
-  ]
+  }
 }

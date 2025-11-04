@@ -46,5 +46,5 @@ export const api_routes = {
 
     //Smtp
     getMyEmailSettings: 'api/services/app/HostSettings/GetEmailSettings',
-    updateAllSettings: 'api/services/app/HostSettings/UpdateAllSettings',
+    updateAllSettings: 'api/services/app/HostSettings/UpdateAllSettings'
 };

@@ -18,7 +18,6 @@ export interface userPreferenceConfig {
     userId?: string;
 }
 
-
 // current info
 export interface ApplicationInfo {
     version: string;
@@ -44,7 +43,6 @@ export interface AppInfoResponse extends CommonModel {
     result: Result;
 }
 
-
 //
 export interface GetAllItemsInputParamsModel {
     Keyword?: string;
@@ -52,7 +50,7 @@ export interface GetAllItemsInputParamsModel {
     SkipCount?: number;
 }
 
-// image model 
+// image model
 export interface ImageUploadResponse extends CommonModel {
-    result: string; 
+    result: string;
 }

@@ -4,17 +4,14 @@ import { Observable } from 'rxjs';
 import { ImageUploadResponse } from '../../models/api/common.model';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root'
 })
 export class CommonService {
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
-  uploadImage(file: File): Observable<ImageUploadResponse> {
-    const formData = new FormData();
-    formData.append('file', file);
-    return this.http.post<ImageUploadResponse>(
-      'api/services/app/TyreService/UploadImage',
-      formData
-    );
-  }
+    uploadImage(file: File): Observable<ImageUploadResponse> {
+        const formData = new FormData();
+        formData.append('file', file);
+        return this.http.post<ImageUploadResponse>('api/services/app/TyreService/UploadImage', formData);
+    }
 }

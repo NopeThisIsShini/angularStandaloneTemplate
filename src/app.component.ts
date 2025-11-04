@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
@@ -9,25 +9,17 @@ import { ElectronService } from './app/shared/services/electron/electron.service
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [
-        RouterModule,
-        RouterOutlet,
-        ToastModule,
-        AppConfigurator,
-        ConfirmDialogModule,
-    ],
+    imports: [RouterModule, RouterOutlet, ToastModule, AppConfigurator, ConfirmDialogModule],
     template: `
         <router-outlet />
         <app-configurator />
         <p-confirmdialog />
         <p-toast />
-    `,
+    `
 })
-export class AppComponent {
-    constructor(
-        private electronService: ElectronService,
-        private messageService: MessageService
-    ) {}
+export class AppComponent implements OnInit {
+    electronService = inject(ElectronService);
+    messageService = inject(MessageService);
     ngOnInit() {
         if (this.electronService.isElectron) {
             console.log('Run in electron');
@@ -35,7 +27,7 @@ export class AppComponent {
                 this.messageService.add({
                     severity: 'info',
                     summary: 'Info',
-                    detail: msg,
+                    detail: msg
                 });
             });
             this.electronService.onUpdateDownloaded(() => {

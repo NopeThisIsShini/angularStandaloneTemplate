@@ -116,7 +116,7 @@ export class LayoutService {
      * Update only allowed configuration properties (darkTheme and menuMode)
      */
     updateConfig(partialConfig: Partial<layoutConfig>): void {
-        this.layoutConfig.update(current => ({
+        this.layoutConfig.update((current) => ({
             ...current,
             // Only allow these properties to be updated
             darkTheme: partialConfig.darkTheme ?? current.darkTheme,
@@ -148,7 +148,7 @@ export class LayoutService {
     toggleDarkMode(isDark?: boolean): void {
         const shouldBeDark = isDark ?? !this.layoutConfig().darkTheme;
 
-        this.layoutConfig.update(current => ({
+        this.layoutConfig.update((current) => ({
             ...current,
             darkTheme: shouldBeDark
         }));
@@ -178,7 +178,7 @@ export class LayoutService {
             .then(() => {
                 this.onTransitionEnd();
             })
-            .catch(() => { });
+            .catch(() => {});
     }
 
     private applyDarkMode(config: layoutConfig): void {

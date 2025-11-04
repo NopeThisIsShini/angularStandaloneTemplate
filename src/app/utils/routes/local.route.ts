@@ -1,5 +1,3 @@
-import { profile } from "console";
-
 export const LOCAL_ROUTES = {
     AUTH: 'auth',
     LOGIN: 'login',
@@ -10,4 +8,6 @@ export const LOCAL_ROUTES = {
     PROFILE: 'profile',
     SMTP: 'smtp',
     DASHBOARD: 'dashboard',
+    ADMINISTRATION: 'administration',
+    ACCOUNT: 'account'
 };

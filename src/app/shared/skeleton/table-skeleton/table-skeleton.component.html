@@ -1,12 +1,5 @@
-<p-table
-  [value]="[1, 2, 3]"
-  [rows]="10"
-  [paginator]="false"
-  [tableStyle]="{ 'min-width': '75rem' }"
-  [rowHover]="true"
-  [showCurrentPageReport]="true"
->
-  <!-- <ng-template #caption>
+<p-table [value]="[1, 2, 3]" [rows]="10" [paginator]="false" [tableStyle]="{ 'min-width': '75rem' }" [rowHover]="true" [showCurrentPageReport]="true">
+    <!-- <ng-template #caption>
     <div class="flex items-center justify-between">
       <p-skeleton width="8rem" height="1.5rem" />
       <p-iconfield>
@@ -16,7 +9,7 @@
     </div>
   </ng-template> -->
 
-  <!-- <ng-template #header>
+    <!-- <ng-template #header>
     <tr>
       <th *ngFor="let col of skeletonColumns" style="min-width: 4rem">
         <div class="flex items-center gap-2">
@@ -27,19 +20,19 @@
     </tr>
   </ng-template> -->
 
-  <ng-template #body let-item>
-    <tr>
-      <td *ngFor="let col of skeletonColumns">
-        <p-skeleton width="8rem" height="1rem" />
-      </td>
+    <ng-template #body let-item>
+        <tr>
+            <td *ngFor="let col of skeletonColumns">
+                <p-skeleton width="8rem" height="1rem" />
+            </td>
 
-      <!-- Actions -->
-      <td>
-        <div class="flex items-center">
-          <p-skeleton size="2.5rem" shape="circle" class="mr-2" />
-          <p-skeleton size="2.5rem" shape="circle" />
-        </div>
-      </td>
-    </tr>
-  </ng-template>
+            <!-- Actions -->
+            <td>
+                <div class="flex items-center">
+                    <p-skeleton size="2.5rem" shape="circle" class="mr-2" />
+                    <p-skeleton size="2.5rem" shape="circle" />
+                </div>
+            </td>
+        </tr>
+    </ng-template>
 </p-table>

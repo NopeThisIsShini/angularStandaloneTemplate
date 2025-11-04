@@ -1,42 +1,39 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { GetAllRolesOutputModel, getUserResponse, userInputParamModel, UsersModel } from '@app/pages/models';
 import { Observable } from 'rxjs';
-import { getUserResponse, userInputParamModel, UsersModel } from '../../models/api/users.model';
-import { GetAllRolesOutputModel } from '../../models/api/roles.model';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root'
 })
 export class UsersService {
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
-  getRoles(): Observable<GetAllRolesOutputModel> {
-    return this.http.get<GetAllRolesOutputModel>(
-      `api/services/app/User/GetRoles`
-    );
-  }
+    getRoles(): Observable<GetAllRolesOutputModel> {
+        return this.http.get<GetAllRolesOutputModel>(`api/services/app/User/GetRoles`);
+    }
 
-  getallusers(input: userInputParamModel): Observable<getUserResponse> {
-    let params = new HttpParams();
-    if (input.SearchTerm) {
-      params = params.set('Keyword', input.SearchTerm);
+    getallusers(input: userInputParamModel): Observable<getUserResponse> {
+        let params = new HttpParams();
+        if (input.SearchTerm) {
+            params = params.set('Keyword', input.SearchTerm);
+        }
+        if (input.MaxResultCount) {
+            params = params.set('MaxResultCount', input.MaxResultCount);
+        }
+        if (input.SkipCount) {
+            params = params.set('SkipCount', input.SkipCount);
+        }
+        return this.http.get<getUserResponse>(`api/services/app/User/GetAll`, {
+            params
+        });
     }
-    if (input.MaxResultCount) {
-      params = params.set('MaxResultCount', input.MaxResultCount);
-    }
-    if (input.SkipCount) {
-      params = params.set('SkipCount', input.SkipCount);
-    }
-    return this.http.get<getUserResponse>(`api/services/app/User/GetAll`, {
-      params,
-    });
-  }
 
-  saveUser(input: UsersModel, isEdit: boolean) {
-    if (isEdit) {
-      return this.http.put<UsersModel>(`api/services/app/User/Update`, input);
-    } else {
-      return this.http.post<UsersModel>(`api/services/app/User/Create`, input);
+    saveUser(input: UsersModel, isEdit: boolean) {
+        if (isEdit) {
+            return this.http.put<UsersModel>(`api/services/app/User/Update`, input);
+        } else {
+            return this.http.post<UsersModel>(`api/services/app/User/Create`, input);
+        }
     }
-  }
 }

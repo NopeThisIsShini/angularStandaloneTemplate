@@ -1,4 +1,3 @@
-
 export function getSeverity(status: boolean | null) {
     switch (status) {
         case true:

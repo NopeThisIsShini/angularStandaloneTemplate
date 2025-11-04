@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { smtpSettingsPayload } from '../../models/api/smtp.model';
+import { smtpSettingsPayload } from '@app/pages/models';
 
 @Injectable({
     providedIn: 'root'
 })
 export class SettingService {
     constructor(private http: HttpClient) {}
-   getEmailSettings() {
+    getEmailSettings() {
         return this.http.get('get_email_setting');
     }
 

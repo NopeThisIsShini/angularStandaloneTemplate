@@ -3,21 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReusableInputComponent } from './input-text.component';
 
 describe('ReusableInputComponent', () => {
-  let component: ReusableInputComponent;
-  let fixture: ComponentFixture<ReusableInputComponent>;
+    let component: ReusableInputComponent;
+    let fixture: ComponentFixture<ReusableInputComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ReusableInputComponent]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [ReusableInputComponent]
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(ReusableInputComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(ReusableInputComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });
